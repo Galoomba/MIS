@@ -1,0 +1,30 @@
+version: '3.2'
+
+services:
+    db:
+      container_name: 'mis_database'
+      image: mysql:5.7.10
+      environment:
+        MYSQL_DATABASE: 'mis'
+        MYSQL_USER: 'admin'
+        MYSQL_PASSWORD: 'nimda'
+        MYSQL_ROOT_PASSWORD: 'toor'
+      ports:
+        - 5001:3306
+      restart: always
+
+    app:
+      container_name: 'mis'
+      build: .
+      links:
+        - "db"
+      depends_on:
+        - "db"
+      ports:
+        - 5000:3000
+      deploy:
+        resources:
+          limits:
+            cpus: '0.5'
+            memory: 150M
+      restart: always
