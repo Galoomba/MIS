@@ -2,10 +2,11 @@
 exports.up = async (knex, Promise) => {
   await knex.schema.createTable('user', (table) => {
     table.increments('id');
-    table.string('email', 100).nullable();
-    table.string('name', 100).nullable();
-    table.string('national_id', 20).unique().nullable();
-    table.string('password').nullable();
+    table.string('email', 100).notNullable();
+    table.string('name', 100).notNullable();
+    table.string('phone', 100).notNullable();
+    table.string('password').notNullable();
+    table.string('user_number', 100).notNullable();
     table.boolean('deleted').defaultTo(0);
     table.timestamps();
     table.unique('email');
@@ -19,7 +20,8 @@ exports.up = async (knex, Promise) => {
   return knex('user').insert({
     email: process.env.ADMIN_USER_EMAIL,
     password: password,
-    national_id: process.env.ADMIN_USER_NATIONALID,
+    user_number: 1,
+    phone: 01212121211,
     name: process.env.ADMIN_USER_NAME,
     created_at: require('moment')().format('YYYY-MM-DD hh:mm:ss'),
     updated_at: require('moment')().format('YYYY-MM-DD hh:mm:ss'),
