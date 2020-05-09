@@ -30,6 +30,15 @@ class roleController extends Controller {
   constructor(repository) {
     super(repository);
   }
+
+  /**
+   * Assign user to role
+   * @param {object} req
+   * @param {object} res
+   */
+  async assign(req, res) {
+    return res.json(await this.repo.assign(req.body));
+  }
 }
 
 module.exports = roleController;
