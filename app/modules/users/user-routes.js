@@ -7,9 +7,14 @@ module.exports = (router) => {
   router.post('/login', container.userValidationRules.apply('login'), userController.login);
 
   /**
-   * Login using the given credentials.
+   * Add new user.
    */
   router.post('/', userController.insert);
+  /**
+   * Update user
+   */
+  router.patch('/', userController.update);
+
 
   return router;
 };

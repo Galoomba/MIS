@@ -9,7 +9,7 @@ exports.up = async (knex, Promise) => {
     table.string('user_number', 100).notNullable();
     table.boolean('deleted').defaultTo(0);
     table.timestamps();
-    table.unique('email');
+    table.unique(['email', 'user_number']);
   });
 
   /**
