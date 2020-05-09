@@ -28,9 +28,8 @@ const envObject = {
   DB_PASSWORD: 'toor', // changable
   DB_NAME: 'MIS',
   AUTH_STRATEGY: 'local',
-  ADMIN_USER_EMAIL: 'Admin@NewsAggregator.com', // changable
+  ADMIN_USER_EMAIL: 'Admin@MIS.com', // changable
   ADMIN_USER_PASSWORD: '1', // changable
-  ADMIN_USER_NATIONALID: '1',
   ADMIN_USER_NAME: 'Admin',
   APP_SECRET: '', // generated
   TOKEN_EXPIRES_IN: '2880', // changable

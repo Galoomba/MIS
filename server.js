@@ -40,7 +40,7 @@ app.use((req, res) => {
  * Start the server.
  */
 
-server.listen(container.config.port, ()=>console.log('News Aggregator Listening'));
+server.listen(container.config.port, ()=>console.log('MIS Listening'));
 
 /**
  * Set default time zone;
