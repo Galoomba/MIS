@@ -21,7 +21,7 @@ exports.up = async (knex, Promise) => {
     email: process.env.ADMIN_USER_EMAIL,
     password: password,
     user_number: 1,
-    phone: 01212121211,
+    phone: '01212121211',
     name: process.env.ADMIN_USER_NAME,
     created_at: require('moment')().format('YYYY-MM-DD hh:mm:ss'),
     updated_at: require('moment')().format('YYYY-MM-DD hh:mm:ss'),
