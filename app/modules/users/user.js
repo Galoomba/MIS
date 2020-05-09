@@ -16,13 +16,13 @@ class User extends Mapper {
     this.id = null;
     /** Relations */
     this.roles = null;
-
+    this.permissions = null;
     /** Attributes */
     this.name = null;
     this.email = null;
     this.password = null;
-    this.nationalId = null;
-    this.permissions = null;
+    this.phone = null;
+    this.userNumber = null;
     this.deleted = null;
     this.created_at = null;
     this.updated_at = null;
@@ -50,7 +50,8 @@ class User extends Mapper {
     password: 'password',
     permissions: 'permissions',
     roles: 'roles',
-    nationalId: 'national_id',
+    phone: 'phone',
+    userNumber: 'user_number',
     deleted: 'deleted',
     created_at: 'created_at',
     updated_at: 'updated_at',

@@ -26,6 +26,22 @@ class UserRepository extends Repository {
   async login(email, password) {
     return container.auth.attempt(email, password);
   }
+
+  /**
+   * Login using the given credentials.
+   *
+   * @param   {string}  data
+   *
+   * @return  {object}
+   */
+  async insert(data) {
+    const model = await container.transaction(container.knex, async (trx) => {
+      const userSerial = await container.serial.generateSerial(trx);
+      data.userNumber = userSerial;
+      return super.insert(data, '[]', {}, trx);
+    });
+    return model;
+  }
 }
 
 module.exports = UserRepository;

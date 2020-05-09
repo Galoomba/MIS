@@ -18,7 +18,7 @@ class UserController extends Controller {
    *
    * @return  {array}
    */
-  static skipPermissionCheck = [];
+  static skipPermissionCheck = ['insert'];
 
   /**
    * Init new object
