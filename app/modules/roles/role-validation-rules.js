@@ -1,5 +1,49 @@
 module.exports = {
   'rules': {
+    /**
+     * Validation rules for insert method.
+     */
+    'insert': container.validator.register({
+      name: container.validator.
+          string().
+          max(100).
+          required(),
+      key: container.validator.
+          string().
+          max(100).
+          required(),
+      permissions: container.validator.
+          array(),
+    }),
+
+    /**
+     * Validation rules for update method.
+     */
+    'update': container.validator.register({
+      id: container.validator.
+          custom('exists', 'id', 'role').
+          number().
+          required(),
+      name: container.validator.
+          string().
+          max(100).
+          required(),
+      key: container.validator.
+          string().
+          max(100).
+          required(),
+      permissions: container.validator.
+          array(),
+    }),
+
+    'assign': container.validator.register({
+      roleId: container.validator.
+          number().
+          required(),
+      permissions: container.validator.
+          array().
+          required(),
+    }),
   },
   'apply': (method) => {
     return module.exports.rules[method].validate();

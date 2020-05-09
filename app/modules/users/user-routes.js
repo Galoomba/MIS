@@ -9,11 +9,11 @@ module.exports = (router) => {
   /**
    * Add new user.
    */
-  router.post('/', userController.insert);
+  router.post('/', container.userValidationRules.apply('insert'), userController.insert);
   /**
    * Update user
    */
-  router.patch('/', userController.update);
+  router.patch('/', container.userValidationRules.apply('update'), userController.update);
   /**
    * list users
    */
