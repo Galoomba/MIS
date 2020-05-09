@@ -14,7 +14,23 @@ module.exports = (router) => {
    * Update user
    */
   router.patch('/', userController.update);
+  /**
+   * list users
+   */
+  router.get('/', userController.all);
+  /**
+   * Get user by id
+   */
+  router.get('/:id', userController.find);
+  /**
+   * Get user by id
+   */
+  router.get('/:page/:perPage', userController.paginate);
 
+  /**
+   * delete user
+   */
+  router.delete('/:id', userController.delete);
 
   return router;
 };

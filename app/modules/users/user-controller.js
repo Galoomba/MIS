@@ -18,7 +18,7 @@ class UserController extends Controller {
    *
    * @return  {array}
    */
-  static skipPermissionCheck = ['insert', 'update'];
+  static skipPermissionCheck = ['insert', 'update', 'find', 'all', 'paginate', 'delete'];
 
   /**
    * Init new object

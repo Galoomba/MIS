@@ -1,10 +1,10 @@
 module.exports = {
   'user': {
     'relations': {
-      'all': '[roles,lines]',
-      'find': '[]',
+      'all': '[roles.permissions]',
+      'find': '[roles.permissions]',
       'findBy': '[]',
-      'paginate': '[]',
+      'paginate': '[roles.permissions]',
       'paginateBy': '[]',
     },
     'allowedRelations': {
