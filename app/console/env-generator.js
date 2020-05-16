@@ -129,7 +129,7 @@ const modifyCompose = async () => {
     if (reader != '') envObject['ADMIN_USER_PASSWORD'] = reader;
 
     reader = await question(' JWT token expiring time [default:2880] ');
-    if (reader != '' && !Number.isInteger(reader)) throw new Error('wrong input');
+    if (reader != '' && !Number.isInteger(Number(reader))) throw new Error('wrong input');
     if (reader != '') envObject['TOKEN_EXPIRES_IN'] = reader;
 
     reader = await question(' TimeZone [default:UTC] ');
