@@ -7,6 +7,21 @@ module.exports = {
       name: container.validator.
           string().
           required(),
+      type: container.validator.
+          string().
+          required(),
+      date: container.validator.
+          date().
+          required(),
+      capacity: container.validator.
+          number().
+          required(),
+      availableSeats: container.validator.
+          number().
+          required(),
+      church: container.validator.
+          object().
+          required(),
     }),
 
     /**
@@ -19,6 +34,16 @@ module.exports = {
           required(),
       name: container.validator.
           string(),
+      type: container.validator.
+          string(),
+      date: container.validator.
+          date(),
+      capacity: container.validator.
+          number(),
+      availableSeats: container.validator.
+          number(),
+      church: container.validator.
+          object(),
     }),
   },
   'apply': (method) => {
