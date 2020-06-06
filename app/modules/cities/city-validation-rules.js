@@ -21,8 +21,6 @@ module.exports = {
           string(),
       isAvailable: container.validator.
           number(),
-      deleted: container.validator.
-          number(),
     }),
   },
   'apply': (method) => {
