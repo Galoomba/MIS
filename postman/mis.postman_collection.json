@@ -21,7 +21,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"test5@test.com\",\n\t\"name\":\"test\",\n\t\"password\":\"121212\",\n\t\"phone\":\"0123555\"\n}",
+							"raw": "{\n\t\"socialStatus\":{\n            \"id\": 1,\n            \"name\": \"married\",\n            \"created_at\": \"2020-06-06T18:22:07.000Z\",\n            \"updated_at\": null\n        },\n\t\"educationalLevel\": {\n            \"id\": 1,\n            \"name\": \"sanwya 3ama\",\n            \"created_at\": \"2020-06-06T18:22:18.000Z\",\n            \"updated_at\": null\n        },\n\t\"roleInFamily\":{\n            \"id\": 1,\n            \"name\": \"father\",\n            \"created_at\": \"2020-06-06T18:22:40.000Z\",\n            \"updated_at\": null\n        },\n\t\"father\":{\n            \"id\": 1,\n            \"name\": \"sam3an\",\n            \"created_at\": \"2020-06-06T18:22:53.000Z\",\n            \"updated_at\": null\n        },\n\t\"family\":{\"id\":1},\n\t\"email\":\"test@tes.com\",\n\t\"englishName\":\"david\",\n\t\"arabicName\":\"ديفيد\"\n,\t\"isDead\":0,\n\t\"relativeName\":\"dsmaea\",\n\t\"gender\":\"M\",\n\t\"nationalId\":\"142578632156\",\n\t\"dateOfBirth\":\"2020-06-06T18:42:24.138Z\",\n\t\"educationalLevelOther\":\"\",\n\t\"primePhone\":\"01115378922\",\n\t\"secPhone\":\"\",\n\t\"job\":\"software developer\",\n\t\"fatherNameOther\":\"\",\n\t\"password\":\"121212\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -129,14 +129,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{base_url}}/api/users/1",
+							"raw": "{{base_url}}/api/users/3",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"api",
 								"users",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -353,6 +353,1240 @@
 									"value": null,
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "church",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"el malak\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/churches",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"churches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/churches",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"churches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"el3adra\",\n\t\"isAvailable\": 0,\n\t\"deleted\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/churches",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"churches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/churches/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"churches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/churches/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"churches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "city",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"cairooo\",\n\t\"district\":{\n\t\t\"name\":\"hekwan\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/cities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/cities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"helwan\",\n\t\"isAvailable\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/cities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/cities/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/cities/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "familtrole",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"father\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/familyRole",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"familyRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/familyRole",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"familyRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"mother\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/familyRole",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"familyRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/familyRole/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"familyRole",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/familyRole/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"familyRole",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "socialStatus",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"married\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/socialStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"socialStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/socialStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"socialStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"single\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/socialStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"socialStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/socialStatus/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"socialStatus",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/socialStatus/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"socialStatus",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "education",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"sanwya 3ama\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/education",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/education",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"a3dady\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/education",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/education/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"education",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/education/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"education",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f78e14a9-d781-4a7b-b615-ce944ed42ff5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "773ae071-0f69-4e2d-9266-7d0a95804d14",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "fathers",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"sam3an\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/fathers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"fathers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/fathers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"fathers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"mikha2el\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/fathers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"fathers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/fathers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"fathers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/fathers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"fathers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d1b54528-c1a2-4388-b8c6-5943b7b69484",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "09f60df6-8d86-4fc4-841e-7f3abe16d253",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "services \"odas\"",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"odas el 7ad el sa3a 8\",\n\t\"type\": \"odas\",\n\t\"date\": \"2020-06-06T11:24:16.086Z\",\n\t\"capacity\":23,\n\t\"availableSeats\":18,\n\t\"church\":{\"id\":1}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"khadma\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/services/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/services/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "153e944f-f386-473f-a5f2-607ef5f9eda3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f90fe43c-fa5b-4623-8260-e5e8bf219b32",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "district",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"mayo\",\n\t\"city\": {\n\t\t\"id\":1\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/districts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"districts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/districts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"districts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1,\n\t\"name\": \"helwan\",\n\t\"isAvailable\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/districts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"districts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/districts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"districts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/districts/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"districts",
+								"2"
 							]
 						}
 					},
