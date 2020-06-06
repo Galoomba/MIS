@@ -14,7 +14,7 @@ module.exports = {
      */
     'update': container.validator.register({
       id: container.validator.
-          custom('exists', 'id', 'education_level').
+          custom('exists', 'id', 'services').
           number().
           required(),
       name: container.validator.
