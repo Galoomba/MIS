@@ -17,11 +17,26 @@ class User extends Mapper {
     /** Relations */
     this.roles = null;
     this.permissions = null;
+    this.socialStatus = null;
+    this.educationalLevel = null;
+    this.roleInFamily = null;
+    this.father = null;
+    this.family = null;
     /** Attributes */
-    this.name = null;
     this.email = null;
+    this.englishName = null;
+    this.arabicName = null;
+    this.isDead = null;
+    this.relativeName = null;
+    this.gender = null;
+    this.nationalId = null;
+    this.dateOfBirth = null;
+    this.educationalLevelOther = null;
+    this.primePhone = null;
+    this.secPhone = null;
+    this.job = null;
+    this.fatherNameOther = null;
     this.password = null;
-    this.phone = null;
     this.userNumber = null;
     this.deleted = null;
     this.created_at = null;
@@ -46,11 +61,29 @@ class User extends Mapper {
   mappings = {
     id: 'id',
     email: 'email',
-    name: 'name',
+    englishName: 'english_name',
+    arabicName: 'arabic_name',
+    isDead: 'is_dead',
+    relativeName: 'relative_name',
+    gender: 'gender',
+    nationalId: 'national_id',
+    dateOfBirth: 'date_of_birth',
+    educationalLevelOther: 'educational_level_other',
+    primePhone: 'prime_phone',
+    secPhone: 'sec_phone',
+    job: 'job',
+    fatherNameOther: 'father_name_other',
     password: 'password',
+
+    /** relations */
     permissions: 'permissions',
     roles: 'roles',
-    phone: 'phone',
+    socialStatus: 'socialStatus',
+    educationalLevel: 'educationalLevel',
+    roleInFamily: 'roleInFamily',
+    father: 'father',
+    family: 'family',
+
     userNumber: 'user_number',
     deleted: 'deleted',
     created_at: 'created_at',

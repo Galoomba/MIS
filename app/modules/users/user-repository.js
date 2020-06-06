@@ -38,7 +38,7 @@ class UserRepository extends Repository {
     const model = await container.transaction(container.knex, async (trx) => {
       const userSerial = await container.serial.generateSerial(trx);
       data.userNumber = userSerial;
-      return super.insert(data, '[]', {}, trx);
+      return super.insert(data, '[]', {relate: true, unrelate: true, noupdate: true}, trx);
     });
     return model;
   }

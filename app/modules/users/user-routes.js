@@ -9,7 +9,7 @@ module.exports = (router) => {
   /**
    * Add new user.
    */
-  router.post('/', container.userValidationRules.apply('insert'), userController.insert);
+  router.post('/', userController.insert);
   /**
    * Update user
    */

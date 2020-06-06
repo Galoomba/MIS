@@ -17,6 +17,7 @@ class Model extends objection {
       this.created_at = container.moment().format('YYYY-MM-DD HH:mm:ss');
 
       if (this.date) this.date = container.moment(this.date).format('YYYY-MM-DD HH:mm:ss');
+      if (this.date_of_birth) this.date_of_birth = container.moment(this.date_of_birth).format('YYYY-MM-DD');
       if (this.due_date) this.due_date = container.moment(this.due_date).format('YYYY-MM-DD');
       if (this.time_log) this.time_log = container.moment(this.time_log).format('YYYY-MM-DD HH:mm:ss');
       if (this.start_date) this.start_date = container.moment(this.start_date).format('YYYY-MM-DD HH:mm:ss');
@@ -39,6 +40,7 @@ class Model extends objection {
       this.updated_at = container.moment().format('YYYY-MM-DD HH:mm:ss');
 
       if (this.date) this.date = container.moment(this.date).format('YYYY-MM-DD HH:mm:ss');
+      if (this.date_of_birth) this.date_of_birth = container.moment(this.date_of_birth).format('YYYY-MM-DD');
       if (this.due_date) this.due_date = container.moment(this.due_date).format('YYYY-MM-DD');
       if (this.time_log) this.time_log = container.moment(this.time_log).format('YYYY-MM-DD HH:mm:ss');
       if (this.start_date) this.start_date = container.moment(this.start_date).format('YYYY-MM-DD HH:mm:ss');

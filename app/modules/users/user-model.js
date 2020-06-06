@@ -32,6 +32,46 @@ class UserModel extends Model {
           to: 'role.id',
         },
       },
+      socialStatus: {
+        relation: container.Model.BelongsToOneRelation,
+        modelClass: container.socialStatus,
+        join: {
+          from: 'user.social_status_id',
+          to: 'social_status.id',
+        },
+      },
+      educationalLevel: {
+        relation: container.Model.BelongsToOneRelation,
+        modelClass: container.education,
+        join: {
+          from: 'user.educational_level_id',
+          to: 'educational_level.id',
+        },
+      },
+      roleInFamily: {
+        relation: container.Model.BelongsToOneRelation,
+        modelClass: container.familyRole,
+        join: {
+          from: 'user.role_in_family_id',
+          to: 'role_in_family.id',
+        },
+      },
+      father: {
+        relation: container.Model.BelongsToOneRelation,
+        modelClass: container.father,
+        join: {
+          from: 'user.father_id',
+          to: 'fathers.id',
+        },
+      },
+      family: {
+        relation: container.Model.BelongsToOneRelation,
+        modelClass: container.family,
+        join: {
+          from: 'user.family_id',
+          to: 'family.id',
+        },
+      },
     };
   }
 }
