@@ -7,6 +7,8 @@ module.exports = (app, express) => {
   app.use('/api/cities', container.cityRoutes(new express.Router()));
   app.use('/api/districts', container.districtRoutes(new express.Router()));
   app.use('/api/familyRole', container.familyRoleRoutes(new express.Router()));
+  app.use('/api/socialStatus', container.socialStatusRoutes(new express.Router()));
+
 
   /**
    * Register logs route
