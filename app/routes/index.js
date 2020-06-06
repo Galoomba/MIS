@@ -5,6 +5,7 @@ module.exports = (app, express) => {
   app.use('/api/permissions', container.permissionRoutes(new express.Router()));
   app.use('/api/churches', container.churchRoutes(new express.Router()));
   app.use('/api/cities', container.cityRoutes(new express.Router()));
+  app.use('/api/districts', container.districtRoutes(new express.Router()));
 
   /**
    * Register logs route
