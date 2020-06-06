@@ -7,6 +7,7 @@ module.exports = {
       name: container.validator.
           string().
           required(),
+      district: container.validator.object(),
     }),
 
     /**
@@ -14,9 +15,10 @@ module.exports = {
      */
     'update': container.validator.register({
       id: container.validator.
-          custom('exists', 'church_id', 'churches').
+          custom('exists', 'id', 'cities').
           number().
           required(),
+      district: container.validator.object(),
       name: container.validator.
           string(),
       isAvailable: container.validator.

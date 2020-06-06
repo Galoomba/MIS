@@ -18,6 +18,10 @@ class City extends Mapper {
     /** Add attributes here **/
     this.name = null;
     this.isAvailable = null;
+
+    /** relation */
+    this.district = null;
+
     this.deleted = null;
     this.created_at = null;
     this.updated_at = null;
@@ -43,6 +47,10 @@ class City extends Mapper {
     /** Add attributes here **/
     name: 'name',
     isAvailable: 'is_available',
+
+    /** relation */
+    district: 'district',
+
     deleted: 'deleted',
     created_at: 'created_at',
     updated_at: 'updated_at',
