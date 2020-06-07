@@ -24,5 +24,5 @@ module.exports = {
   auth_strategy: process.env.AUTH_STRATEGY || '',
   auth_gateway: process.env.AUTH_GATEWAY || '',
 
-  
+  MASS_CALLDOWN: 'MASS_CALLDOWN',
 };

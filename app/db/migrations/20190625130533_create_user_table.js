@@ -20,7 +20,7 @@ exports.up = async (knex, Promise) => {
     table.string('user_number', 100).notNullable();
     table.boolean('deleted').defaultTo(0);
     table.timestamps();
-    table.unique(['national_id', 'user_number']);
+    table.unique(['national_id', 'prime_phone', 'user_number']);
   });
 
   /**

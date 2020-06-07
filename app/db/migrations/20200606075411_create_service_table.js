@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     /** Entities */
     table.integer('church_id').nullable().unsigned();
     table.string('name', 200).unique().notNullable();
-    table.string('type', 200).unique().notNullable();
+    table.string('type', 200).notNullable();
     table.dateTime('date').notNullable();
     table.integer('capacity').notNullable();
     table.integer('available_seats').notNullable();

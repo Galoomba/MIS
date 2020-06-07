@@ -117,6 +117,46 @@ class ErrorHandler {
     err.statusCode = 423;
     throw err;
   }
+
+  /**
+   * Throw 422 field already exists.
+   *
+   * @param   {string}  name
+   *
+   * @return  {void}
+   */
+  outOfCapacity(name = '') {
+    const err = new Error(`${name} outOfCapacity`);
+    err.statusCode = 423;
+    throw err;
+  }
+
+  /**
+   * Throw 422 field already exists.
+   *
+   * @param   {string}  name
+   *
+   * @return  {void}
+   */
+  familyExcide(name = '') {
+    const err = new Error(`${name} Numbers of person excide family members!`);
+    err.statusCode = 423;
+    throw err;
+  }
+
+
+  /**
+   * Throw 422 field already exists.
+   *
+   * @param   {string}  name
+   *
+   * @return  {void}
+   */
+  alreadyAttended(name = '') {
+    const err = new Error(`${name} you have already attended that month`);
+    err.statusCode = 423;
+    throw err;
+  }
 }
 
 module.exports = ErrorHandler;

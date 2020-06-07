@@ -11,7 +11,8 @@ module.exports = (app, express) => {
   app.use('/api/education', container.educationRoutes(new express.Router()));
   app.use('/api/fathers', container.fatherRoutes(new express.Router()));
   app.use('/api/services', container.serviceRoutes(new express.Router()));
-
+  app.use('/api/family', container.familyRoutes(new express.Router()));
+  app.use('/api/booking', container.bookingRoutes(new express.Router()));
 
   /**
    * Register logs route
