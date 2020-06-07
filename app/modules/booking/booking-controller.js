@@ -18,7 +18,7 @@ class BookingController extends Controller {
    *
    * @return  {array}
    */
-  static skipPermissionCheck = ['insert', 'setCallDown'];
+  static skipPermissionCheck = ['insert', 'setCallDown', 'hardDelete'];
 
   /**
    * Init new object
@@ -54,6 +54,18 @@ class BookingController extends Controller {
    */
   async setCallDown(req, res) {
     return res.json(await this.repo.setCallDown(req.user, req.body));
+  }
+
+  /**
+   * Hard delete record from the repo based on the given id.
+   *
+   * @param   {object}  req
+   * @param   {object}  res
+   *
+   * @return  {object}
+   */
+  async hardDelete(req, res) {
+    return res.json(await this.repo.hardDelete(req.user, req.params.id));
   }
 }
 

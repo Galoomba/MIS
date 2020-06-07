@@ -33,7 +33,7 @@ module.exports = (router) => {
   /**
    * Create booking calldown.
    */
-  router.post('/calldown',container.bookingValidationRules.apply('calldown'), bookingController.setCallDown);
+  router.post('/calldown', container.bookingValidationRules.apply('calldown'), bookingController.setCallDown);
 
   /**
    * Update the given booking.
@@ -43,7 +43,7 @@ module.exports = (router) => {
   /**
    * Delete the given booking.
    */
-  router.delete('/:id', bookingController.delete);
+  router.delete('/:id', bookingController.hardDelete);
 
   return router;
 };

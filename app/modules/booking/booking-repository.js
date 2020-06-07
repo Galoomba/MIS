@@ -57,7 +57,21 @@ class BookingRepository extends Repository {
 
     return model;
   }
-
+  /**
+   * Hard delete record based on the given condition.
+   * @param   {object}  user
+   * @param   {number}  id
+   * @param   {string}  attribute
+   *
+   * @return  {number}
+   */
+  async hardDelete(user, id, attribute = 'id') {
+    // free the service seats
+    const [bookingRecord] = await this.model.query().where({user_id: user.id, id: id}).eager('[service]');
+    const availableSeats = bookingRecord.service.available_seats + bookingRecord.number_of_persons;
+    await container.service.query().patch({availableSeats}).where({id: bookingRecord.service.id});
+    return this.model.query().where(attribute, id).where({user_id: user.id}).hardDelete();
+  }
 
   /**
    * insert the given data.
