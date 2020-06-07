@@ -28,7 +28,7 @@ class BookingRepository extends Repository {
    */
   async insert(user, data, allowedRelations = '[]', upsertOptions = {}, transaction = false) {
     const model = await container.transaction(container.knex, async (trx) => {
-      const service = await container.service.query().findById(data.service.id);
+      const service = await container.service.query(trx).findById(data.service.id);
       // service is available
       if (!service) container.errorHandlers.notFound('service');
       // validate the number is available in service
@@ -37,20 +37,20 @@ class BookingRepository extends Repository {
       const [callDownQuery] = await container.knex('constants').select().where({name: container.config.MASS_CALLDOWN});
       const callDown = JSON.parse(callDownQuery.value);
 
-      const [lastBookedService] = await this.model.query().where({user_id: user.id}).
+      const [lastBookedService] = await this.model.query(trx).where({user_id: user.id}).
           eager('[service]').orderBy('created_at', 'desc').limit(1);
       const serviceCallDownDate = container.moment(lastBookedService.service.date)
           .add({days: callDown.day, months: callDown.month});
       if (!(serviceCallDownDate < container.moment(service.date)))container.errorHandlers.alreadyAttended();
 
       // validate number of family
-      const [family] = await container.user.query().count('* as number')
+      const [family] = await container.user.query(trx).count('* as number')
           .whereRaw(`family_id = (select family_id from user where id = ${user.id})`);
       if (!(family.number <= data.numberOfPersons)) container.errorHandlers.familyExcide();
 
       // reserve seats in service
       const availableSeats = service.available_seats - data.numberOfPersons;
-      await container.service.query().patch({availableSeats}).where({id: service.id});
+      await container.service.query(trx).patch({availableSeats}).where({id: service.id});
       data.user = {id: user.id};
       return super.insert(data, allowedRelations, upsertOptions, trx );
     });
@@ -67,10 +67,12 @@ class BookingRepository extends Repository {
    */
   async hardDelete(user, id, attribute = 'id') {
     // free the service seats
-    const [bookingRecord] = await this.model.query().where({user_id: user.id, id: id}).eager('[service]');
-    const availableSeats = bookingRecord.service.available_seats + bookingRecord.number_of_persons;
-    await container.service.query().patch({availableSeats}).where({id: bookingRecord.service.id});
-    return this.model.query().where(attribute, id).where({user_id: user.id}).hardDelete();
+    return container.transaction(container.knex, async (trx) => {
+      const [bookingRecord] = await this.model.query(trx).where({user_id: user.id, id: id}).eager('[service]');
+      const availableSeats = bookingRecord.service.available_seats + bookingRecord.number_of_persons;
+      await container.service.query(trx).patch({availableSeats}).where({id: bookingRecord.service.id});
+      return this.model.query(trx).where(attribute, id).where({user_id: user.id}).hardDelete();
+    });
   }
 
   /**
