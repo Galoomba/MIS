@@ -1297,7 +1297,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"odas el 7ad el sa3a 8\",\n\t\"type\": \"odas\",\n\t\"date\": \"2020-06-06T11:24:16.086Z\",\n\t\"capacity\":23,\n\t\"availableSeats\":18,\n\t\"church\":{\"id\":1}\n}",
+							"raw": "{\n\t\"name\": \"odas el 7el sa3a 8\",\n\t\"type\": \"odas\",\n\t\"date\": \"2020-12-06T11:24:16.086Z\",\n\t\"capacity\":23,\n\t\"availableSeats\":18,\n\t\"church\":{\"id\":1}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1587,6 +1587,79 @@
 								"api",
 								"districts",
 								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"service\":{\"id\":5},\n\t\"numberOfPersons\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/booking",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeDateConstants",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"day\":20,\n\t\"month\":0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/booking/calldown",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"booking",
+								"calldown"
 							]
 						}
 					},
