@@ -63,7 +63,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"Admin@MIS.com\",\n\t\"password\": \"1\"\n}",
+							"raw": "{\n\t\"email\": \"12354689712\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -97,7 +97,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"id\": 2,\n        \"name\": \"ww\",\n        \"email\": \"tesss3t3@test.com\",\n        \"phone\": \"1111111\"\n    }",
+							"raw": "{\n        \"id\": 2,\n        \"name\": \"ww\",\n        \"email\": \"tesss3t3@test.com\",\n        \"phone\": \"1111111\",\n        \"password\": \"sdadsasadsa\",\n        \"churches\": [\n            {\n            \"id\": 1,\n            \"name\": \"el malak\",\n            \"isAvailable\": 1,\n            \"created_at\": \"2020-06-07T17:48:12.000Z\",\n            \"updated_at\": null\n            }\n        ]\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -129,14 +129,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{base_url}}/api/users/3",
+							"raw": "{{base_url}}/api/users/2",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"api",
 								"users",
-								"3"
+								"2"
 							]
 						}
 					},
