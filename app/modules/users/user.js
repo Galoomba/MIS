@@ -16,6 +16,7 @@ class User extends Mapper {
     this.id = null;
     /** Relations */
     this.roles = null;
+    this.churches = null;
     this.permissions = null;
     this.socialStatus = null;
     this.educationalLevel = null;
@@ -78,6 +79,7 @@ class User extends Mapper {
     /** relations */
     permissions: 'permissions',
     roles: 'roles',
+    churches: 'churches',
     socialStatus: 'socialStatus',
     educationalLevel: 'educationalLevel',
     roleInFamily: 'roleInFamily',

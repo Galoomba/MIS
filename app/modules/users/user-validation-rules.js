@@ -37,6 +37,7 @@ module.exports = {
           string(),
       userNumber: container.validator.
           string(),
+        
     }),
     /**
      * Validation rules for login method.

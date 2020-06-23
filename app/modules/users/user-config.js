@@ -2,7 +2,7 @@ module.exports = {
   'user': {
     'relations': {
       'all': '[roles.permissions]',
-      'find': '[roles.permissions]',
+      'find': '[roles.permissions,churches]',
       'findBy': '[]',
       'paginate': '[roles.permissions]',
       'paginateBy': '[]',

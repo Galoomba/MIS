@@ -13,7 +13,7 @@ module.exports = (router) => {
   /**
    * Update user
    */
-  router.patch('/', container.userValidationRules.apply('update'), userController.update);
+  router.patch('/', userController.update);
   /**
    * list users
    */

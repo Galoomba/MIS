@@ -32,6 +32,18 @@ class UserModel extends Model {
           to: 'role.id',
         },
       },
+      churches: {
+        relation: container.Model.ManyToManyRelation,
+        modelClass: container.church,
+        join: {
+          from: 'user.id',
+          through: {
+            from: 'user_church.user_id',
+            to: 'user_church.church_id',
+          },
+          to: 'churches.id',
+        },
+      },
       socialStatus: {
         relation: container.Model.BelongsToOneRelation,
         modelClass: container.socialStatus,
