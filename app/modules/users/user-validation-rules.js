@@ -46,8 +46,7 @@ module.exports = {
           string().
           required(),
       password: container.validator.
-          string().
-          required(),
+          string(),
     }),
   },
   'apply': (method) => {
