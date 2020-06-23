@@ -39,10 +39,11 @@ class BookingRepository extends Repository {
 
       const [lastBookedService] = await this.model.query(trx).where({user_id: user.id}).
           eager('[service]').orderBy('created_at', 'desc').limit(1);
+      if (!lastBookedService) {
       const serviceCallDownDate = container.moment(lastBookedService.service.date)
           .add({days: callDown.day, months: callDown.month});
       if (!(serviceCallDownDate < container.moment(service.date)))container.errorHandlers.alreadyAttended();
-
+    }
       // validate number of family
       const [family] = await container.user.query(trx).count('* as number')
           .whereRaw(`family_id = (select family_id from user where id = ${user.id})`);
